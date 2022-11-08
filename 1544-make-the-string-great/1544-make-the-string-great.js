@@ -12,5 +12,6 @@ var makeGood = function(s) {
             i++;
         }
     }
+    
    return s;
 };
