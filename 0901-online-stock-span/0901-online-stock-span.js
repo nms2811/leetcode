@@ -9,9 +9,11 @@ var StockSpanner = function() {
  */
 StockSpanner.prototype.next = function(price) {
     let count = 1;
+    
     while(this.stack.length > 0 && price >= this.stack.at(-1).price) {      
         count+= this.stack.pop().count;
     }  
+    
     this.stack.push({price, count})
     return count;
 };
