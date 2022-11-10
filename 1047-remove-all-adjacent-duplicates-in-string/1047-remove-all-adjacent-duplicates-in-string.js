@@ -3,15 +3,14 @@
  * @return {string}
  */
 var removeDuplicates = function(s) {
-    s = s.split('');
     let i = 0;
     while(i < s.length-1) {
-        if(s[i] === s[i+1]){
-            s.splice(i,2);
+        if(s.charAt(i) === s.charAt(i+1)){
+            s = s.slice(0, i) + s.slice(i+2);
             i--;
         }else{
             i++;
         }
     }
-    return s.join('');
+    return s;
 };
