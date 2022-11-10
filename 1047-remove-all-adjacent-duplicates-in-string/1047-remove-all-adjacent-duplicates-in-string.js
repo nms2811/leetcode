@@ -3,14 +3,9 @@
  * @return {string}
  */
 var removeDuplicates = function(s) {
-    let i = 0;
-    while(i < s.length-1) {
-        if(s.charAt(i) === s.charAt(i+1)){
-            s = s.slice(0, i) + s.slice(i+2);
-            i--;
-        }else{
-            i++;
-        }
+    let stack = [];
+    for (let char of s) {
+        (char === stack[stack.length - 1])? stack.pop(): stack.push(char);
     }
-    return s;
+    return stack.join('');
 };
