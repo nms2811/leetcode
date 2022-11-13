@@ -21,7 +21,6 @@ var findMedianSortedArrays = function(nums1, nums2) {
         }else if (l2  > r1) {
             low = cut1 + 1;
         } else {
-            console.log()
             return total % 2 === 0? (Math.max(l1, l2) + Math.min(r1, r2))/2 : Math.max(l1, l2)
         }
     }
