@@ -21,6 +21,7 @@ var removeStones = function(stones) {
             }
         }
     }
+    
     for(let e in storage) {
         dfs(e, visited);
     }
