@@ -29,8 +29,6 @@ var addTwoNumbers = function(l1, l2) {
             cn.next = new ListNode(check);
             cn = cn.next;
         }
-        
-        
         addNext((l1?l1.next: null), (l2?l2.next: null))
     }
     return rn;
