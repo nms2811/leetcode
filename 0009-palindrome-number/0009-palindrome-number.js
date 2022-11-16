@@ -11,5 +11,4 @@ var isPalindrome = function(x) {
         x = Math.floor(x / 10);
     }
     return (check === original)? true:false
-   
 };
