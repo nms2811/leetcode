@@ -20,7 +20,7 @@ var solution = function(isBadVersion) {
     return function(n) {
         let low = 1;
         let high = n;
-        
+        let mid;
         while(low <= high) {
             mid = Math.floor((low + high) / 2);
             if(isBadVersion(mid)) {
