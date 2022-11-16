@@ -25,5 +25,6 @@ var guessNumber = function(n) {
             low = mid + 1;
         }
     }
+    
     return -1;
 };
