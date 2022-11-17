@@ -16,6 +16,5 @@ var computeArea = function(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     let yoverlap = Math.min(ay2, by2) - Math.max(ay1, by1);
     let overlap = 0;
     if(xoverlap > 0 && yoverlap > 0) overlap = xoverlap * yoverlap;
-    return r1 + r2 - overlap
-   
+    return r1 + r2 - overlap;
 };
