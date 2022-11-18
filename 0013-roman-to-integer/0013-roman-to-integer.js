@@ -13,12 +13,16 @@ var romanToInt = function(s) {
         'M': 1000
     }
     let num = 0;
+    let r1;
+    let r2;
     for(i = 0; i < s.length; i++) {
-        if(map[s.charAt(i)] < map[s.charAt(i+1)]) {
-            num += map[s.charAt(i+1)] - map[s.charAt(i)];
+        r1 = map[s[i]]
+        r2 = map[s[i + 1]]
+        if(r1 < r2) {
+            num += r2 - r1;
             i++;
         } else {
-            num += map[s.charAt(i)];
+            num += r1;
         }
     }
     return num;
