@@ -3,9 +3,10 @@
  * @return {number[]}
  */
 var countBits = function(n) {
-    dp = [0];
+    dp = new Array(n + 1).fill(-1);;
     dp[0] = 0;
-    if(n === 0 ) return dp;
+    let q = 0;
+    let a = 0;
     for(let i = 1;i <=n; i++) {
         let q = i%2;
         let a = Math.floor(i/2);
