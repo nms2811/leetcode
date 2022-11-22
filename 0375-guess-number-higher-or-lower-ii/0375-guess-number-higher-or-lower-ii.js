@@ -6,7 +6,6 @@ var getMoneyAmount = function(n) {
     
     let dp = Array(n+1).fill().map(() => Array(n+1).fill(Infinity));
     return recurse(1, n);
-
     function recurse(l, h) {
         if(h <= l) return 0;
         if(dp[l][h] !== Infinity) return dp[l][h];
