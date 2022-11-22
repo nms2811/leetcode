@@ -18,7 +18,6 @@ var calculate = function(s) {
             (s[i] === '-')? sign = -1: sign = 1;
             num = 0;
         }
-
         if(s[i] === '('){
             stack.push(result);
             stack.push(sign);
@@ -30,10 +29,8 @@ var calculate = function(s) {
             result *= stack.pop();
             result += stack.pop();
             num = 0;
-        }
-        
+        } 
     }
-
     result += sign * num;
     return result
 };
