@@ -26,6 +26,5 @@ var jobScheduling = function(startTime, endTime, profit) {
         if(task !== -1) profit += dp[task];
         dp[i] = Math.max(profit, dp[i - 1]);
     }
-    return dp[n-1]
-    
+    return dp[n-1];
 };
