@@ -13,5 +13,4 @@ var halvesAreAlike = function(s) {
         if(vowels.indexOf(s2[i]) !== -1) c2++;
     }
     return (c1 === c2)? true: false;
-    
 };
