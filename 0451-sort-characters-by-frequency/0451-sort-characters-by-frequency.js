@@ -3,18 +3,9 @@
  * @return {string}
  */
 var frequencySort = function(s) {
-    map1 = new Map();
-    
+    let map = {};
     for(let i = 0; i < s.length; i++) {
-         map1.set(s[i], map1.get(s[i]) + 1 || 1)
+        map[s[i]]? map[s[i]]++: map[s[i]] = 1;
     }
-    return [...map1].sort((a,b) => b[1] - a[1]).map(
-        entry => {
-            let ns = [];
-            for(i = 0; i < entry[1]; i++) {
-                ns.push(entry[0]);
-            }
-           return ns.join('')
-        }
-    ).join('')
+    return Object.entries(map).sort((a,b) => b[1] - a[1]).map(x => x[0].repeat(x[1])).join('')
 };
