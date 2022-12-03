@@ -15,5 +15,6 @@ var numberOfPairs = function(nums) {
         }
     }
     answer[1] = check.size;
+    
     return answer;
 };
