@@ -5,7 +5,6 @@
 var numberOfPairs = function(nums) {
     let answer = [0, 0];
     let check = new Set();
-    
     for (const n of nums) {
         if (check.has(n)) {
             answer[0]++;
@@ -15,6 +14,5 @@ var numberOfPairs = function(nums) {
         }
     }
     answer[1] = check.size;
-    
     return answer;
 };
