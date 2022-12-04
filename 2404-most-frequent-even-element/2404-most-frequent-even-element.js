@@ -3,6 +3,7 @@
  * @return {number}
  */
 var mostFrequentEven = function(nums) {
+    if(nums.length==1 && nums[0]%2===0) return nums[0];
     map = new Map();
     for(let i = 0; i < nums.length; i++) {
         if(nums[i] % 2 === 0) map.set(nums[i], map.get(nums[i]) + 1 || 1)
