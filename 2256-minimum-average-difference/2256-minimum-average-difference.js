@@ -3,6 +3,7 @@
  * @return {number}
  */
 var minimumAverageDifference = function(nums) {
+    
     let total = nums.reduce((sum, a) => sum + a, 0);
     let n = nums.length;
     let lsum = 0;
