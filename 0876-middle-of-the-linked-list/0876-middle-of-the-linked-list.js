@@ -11,14 +11,11 @@
  */
 var middleNode = function(head) {
     let length = Math.ceil(findLength(head)/2);
-    return getAnswer(length, head);
-
-    function getAnswer(count, node) {
-        for(let i = 0; i < count; i++) {
-            node = node.next;
+    
+        for(let i = 0; i < length; i++) {
+            head = head.next;
         }
-        return node;
-    }
+        return head;
 
     function findLength(node){
         let length = 0;
