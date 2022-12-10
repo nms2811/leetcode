@@ -11,22 +11,19 @@
  * @return {number}
  */
 var maxProduct = function(root) {
-    let max = -Infinity;
-    let res = [];
     let mod = 1e9 + 7;
-    let total = totalSum(root);
+    let total = max = 0;
+    total = totalSum(root);
+    totalSum(root);
 
-    for(let e of res) {
-        let curr = (total - e) * e;
-        max = Math.max(max, curr);
-    }
     return max % mod;
 
     function totalSum(node) {
         if(!node) return 0;
         let lsum = totalSum(node.left);
         let rsum = totalSum(node.right);
-        res.push(lsum, rsum);
+        max = Math.max(max, ((total - lsum) * lsum), ((total - rsum) * rsum))
         return node.val + lsum + rsum;
     }
+
 };
