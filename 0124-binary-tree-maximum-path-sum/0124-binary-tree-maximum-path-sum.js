@@ -20,6 +20,5 @@ var maxPathSum = function(root) {
         let rsum = Math.max(0, dfs(node.right));
         max = Math.max(max, node.val + lsum + rsum);
         return Math.max(lsum, rsum) + node.val;
-    }
-    
+    } 
 };
