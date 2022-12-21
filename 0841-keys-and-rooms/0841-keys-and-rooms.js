@@ -10,7 +10,7 @@ var canVisitAllRooms = function(rooms) {
         visited.add(idx);
         let a = rooms[idx];
         for(let key of a){     
-            if(!visited.has(key))dfs(rooms, key);
+            if(!visited.has(key)) dfs(rooms, key);
         }
     }
 }
