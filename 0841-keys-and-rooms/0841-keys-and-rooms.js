@@ -9,7 +9,8 @@ var canVisitAllRooms = function(rooms) {
     function dfs(rooms, idx) {
         visited.add(idx);
         let a = rooms[idx];
-        for(let key of a)    
-            if(!visited.has(key))dfs(rooms, key) 
+        for(let key of a){     
+            if(!visited.has(key))dfs(rooms, key);
+        }
     }
 }
