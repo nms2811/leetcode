@@ -3,9 +3,12 @@
  * @return {boolean}
  */
 var canJump = function(nums) {
-    let last = nums.length - 1;
-    for(let i = nums.length - 1; i >= 0; i--) {
-        if(nums[i] + i >= last) last = i;
+    if(nums.length === 1) return true;
+    let first = nums[0];
+    for(let i = 0; i < nums.length; i++) {
+        first--;
+        if(first < 0) return false;
+        if(nums[i] > first) first = nums[i];
     }
-    return last === 0;
+    return true;
 };
