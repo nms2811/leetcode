@@ -10,9 +10,6 @@ var allPathsSourceTarget = function(graph) {
     return output;
     function dfs(node) {
         if(node === graph.length - 1) {
-            console.log('***')
-            console.log(path);
-            console.log('***')
             output.push(path.slice(0));
         } else {
             for(let i = 0; i< graph[node].length; i++){ 
