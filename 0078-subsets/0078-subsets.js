@@ -3,14 +3,16 @@
  * @return {number[][]}
  */
 var subsets = function(nums) {
-    if(nums.length === 0) return [];
-    let subsets = [];
-    subsets.push([],[nums[0]]);
-    for(let i = 1; i < nums.length; i++) {
-        currLength = subsets.length;
-        for(let j = 0; j < currLength; j++) {
-            subsets.push([...subsets[j], nums[i]]);
+    let combinations = [];
+    backtrack(nums, []);
+    return combinations;
+
+    function backtrack(nums, path) {
+        combinations.push([...path]);
+        for(let i = 0; i < nums.length; i++) {
+            path.push(nums[i]);
+            backtrack(nums.slice(i+1), path);
+            path.pop();
         }
     }
-    return subsets;
 };
