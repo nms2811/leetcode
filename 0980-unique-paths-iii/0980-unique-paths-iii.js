@@ -3,10 +3,8 @@
  * @return {number}
  */
 var uniquePathsIII = function(grid) {
-    let r = grid.length;
-    let c = grid[0].length;
-    let si ,sj = 0;
-    let walkable = 0;
+    let r = grid.length, c = grid[0].length;
+    let si ,sj, walkable = 0;
     let dirs = [[0,-1], [0,1], [1,0], [-1,0]];
     for(let i = 0; i < r; i++) {
         for(let j = 0; j < c; j++) {
