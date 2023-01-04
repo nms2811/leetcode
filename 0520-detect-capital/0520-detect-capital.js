@@ -8,4 +8,5 @@ var detectCapitalUse = function(word) {
     let first = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     if(upper === word || lower === word || first === word) return true;
     else return false;
+    
 };
