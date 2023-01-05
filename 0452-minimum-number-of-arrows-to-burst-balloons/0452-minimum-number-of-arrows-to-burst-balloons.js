@@ -13,5 +13,6 @@ var findMinArrowShots = function(points) {
             currentEnd = Math.min(currentEnd, xend);
         }
     }
+    
     return count;
 };
