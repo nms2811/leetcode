@@ -5,31 +5,26 @@
  * @return {string}
  */
 var smallestEquivalentString = function(s1, s2, baseStr) {
-    let link = {};
-    function find(a) {
-        if(link[a] == null) link[a] = a;
-        while(link[a] !== a) {
-            link[a] = link[link[a]];
-            a = link[a];
+    let arr =  'abcdefghijklmnopqrstuvwxyz'.split('');
+    ans = "";
+    for(let i = 0 ; i < s1.length; i++) {
+        let f = arr[s1[i].charCodeAt(0) - 97];
+        let s = arr[s2[i].charCodeAt(0) - 97];
+        let a = "", b = "";
+        if(f === s) continue;
+        if(f > s) {
+            a = s;
+            b = f;
+        } else {
+            a = f;
+            b = s;
         }
-        return a;
-    }
-    function union(a, b) {
-        a = find(a);
-        b = find(b);
-        if(a > b) {
-            let temp = b;
-            b = a;
-            a = temp;
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] === b) arr[i] = a;
         }
-        link[b] = a;
     }
-    for(let i = 0; i < s1.length; i++) {
-        union(s1[i], s2[i]);
-    }
-    ans= "";
-    for(const a of baseStr){
-        ans+=find(a);
-    }
-    return ans
+   for(let char of baseStr) {
+       ans += arr[char.charCodeAt(0) - 97];
+   }
+   return ans;
 };
