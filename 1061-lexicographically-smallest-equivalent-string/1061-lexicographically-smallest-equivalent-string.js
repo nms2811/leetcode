@@ -14,7 +14,6 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
         }
         return a;
     }
-
     function union(a, b) {
         a = find(a);
         b = find(b);
@@ -25,7 +24,6 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
         }
         link[b] = a;
     }
-
     for(let i = 0; i < s1.length; i++) {
         union(s1[i], s2[i]);
     }
