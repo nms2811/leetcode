@@ -32,5 +32,4 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
         ans+=find(a);
     }
     return ans
-    
 };
