@@ -3,27 +3,30 @@
  * @return {string[][]}
  */
 var partition = function(s) {
-    if(s.length === 0) return [];
     let res = [];
     let partition = [];
-    const isPalindrom = (str) => str === str.split('').reverse().join('');
-    let dfs = function (s, partition, res) {
-        if(s.length === 0) {
+    function isPalindrom(left, right) {
+        while(left < right) {
+            if(s[left] !== s[right]) return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+    function dfs(i) {
+        if(s.length === i) {
             res.push([...partition]);
             return;
         }
-
-        for(let i = 0; i < s.length; i++) {
-            let prefix = s.slice(0, i + 1);
-            let postfix = s.slice(i + 1);
-            if(isPalindrom(prefix)) {
-                partition.push(prefix);
-                dfs(postfix, partition, res);
+        for(let j = i; j < s.length; j++) {
+            if(isPalindrom(i, j)) {
+                partition.push(s.slice(i , j + 1));
+                dfs(j + 1);
                 partition.pop();
             }
         }
         
     }
-    dfs(s,partition, res);
+    dfs(0);
     return res;
 };
