@@ -4,9 +4,5 @@
  * @return {number[]}
  */
 var shuffle = function(nums, n) {
-    let res = [];
-    for (let i = 0; i < n; i++) {
-        res.push(nums[i],nums[i + n]);
-    }
-    return res;
+    return nums.map((element, idx)=> (idx % 2 === 0)? nums[idx / 2]: nums[n + (idx-1)/2]);
 };
