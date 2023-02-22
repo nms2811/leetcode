@@ -11,16 +11,17 @@
  * @return {number}
  */
 var minDiffInBST = function(root) {
-    let arr = [], min = Infinity;
+    let min = Infinity, prev = null;
     dfs(root);
-    for(let i = 1; i < arr.length; i++) {
-        min = Math.min(min, arr[i] - arr[i - 1]);
-    }
     return min;
+
    function dfs(node) {
-       if(!node) return;
+       if(node === null) return;
        dfs(node.left);
-       arr.push(node.val);
+       if(prev !== null) {
+           min = Math.min(min, node.val - prev);
+       }
+        prev = node.val;
        dfs(node.right);
    } 
 };
