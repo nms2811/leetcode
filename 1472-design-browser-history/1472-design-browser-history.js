@@ -8,14 +8,13 @@ class BrowserHistory{
     }
 
     visit(url) {
-        // console.log(this.pages);
         this.pages.next = {
             url,
             back: this.pages,
             next:null
         }
         this.pages = this.pages.next;
-        console.log(this.pages);
+
     }
 
     back(steps) {
